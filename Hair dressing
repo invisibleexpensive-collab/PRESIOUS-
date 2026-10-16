@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Abuja Hair Dressing | Beauty Training Center</title>
+  <!-- Google Fonts & Font Awesome for Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #fef9e6 0%, #fff5e8 100%);
+      color: #2d2a24;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1e6d8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c49a6c;
+      border-radius: 12px;
+    }
+
+    /* container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+    }
+
+    /* modern marquee / announcement bar */
+    .announcement-bar {
+      background: #2c2b26;
+      color: #ffdfb3;
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 3px solid #e6b17e;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .announcement-bar .ticker {
+      display: inline-block;
+      animation: scrollTicker 28s linear infinite;
+      white-space: nowrap;
+      padding-right: 2rem;
+    }
+    .announcement-bar i {
+      margin: 0 1rem;
+      color: #f7c873;
+    }
+    @keyframes scrollTicker {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* header & navigation */
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem 0 2rem;
+      gap: 1.5rem;
+    }
+    .brand h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #b45f2b, #e09d5e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+    .brand p {
+      font-size: 0.9rem;
+      color: #7a6852;
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+    .cta-btn {
+      background: #c87e3a;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 8px rgba(200,126,58,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cta-btn i {
+      font-size: 1rem;
+    }
+    .cta-btn:hover {
+      background: #a5632c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(160, 90, 30, 0.25);
+    }
+
+    /* location card & description */
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0 2.8rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      border-radius: 2rem;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+      border: 1px solid #ffefdf;
+    }
+    .welcome-message {
+      flex: 2;
+    }
+    .welcome-message p {
+      font-size: 1.1rem;
+      color: #3e3529;
+      font-weight: 500;
+      border-left: 5px solid #e2a36f;
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .branch-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0;
+    }
+    .branch {
+      background: #f2e5d8;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #a45d2e;
+    }
+    .reg-highlight {
+      background: #faeedf;
+      padding: 0.8rem 1.2rem;
+      border-radius: 28px;
+      display: inline-block;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      color: #b4622a;
+    }
+    .contact-card {
+      flex: 1;
+      background: #fff7f0;
+      border-radius: 1.5rem;
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+    .contact-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      color: #c47a3a;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      background: #efe3d6;
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #b45f2b;
+      font-size: 1.3rem;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background: #d9b48b;
+      color: white;
+      transform: scale(1.05);
+    }
+    .phone-link {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e2a2f;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      background: #e7d9ce;
+      padding: 0.5rem 1rem;
+      border-radius: 60px;
+    }
+    .phone-link i {
+      color: #2c7a47;
+    }
+
+    /* two column layout for materials & achievements */
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+    .card {
+      flex: 1;
+      background: white;
+      border-radius: 1.75rem;
+      padding: 1.8rem 1.5rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border: 1px solid #ffefdf;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px -8px rgba(0,0,0,0.12);
+    }
+    .card h2, .card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      border-bottom: 3px solid #f3cfad;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .card ul, .card ol {
+      margin-left: 1.3rem;
+      margin-top: 0.5rem;
+    }
+    .card li {
+      margin: 0.85rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #3d352c;
+    }
+    .card li i {
+      margin-right: 12px;
+      color: #d9914a;
+      width: 1.4rem;
+    }
+    .achievement-list li i {
+      color: #5f8b6f;
+    }
+    /* special style for ordered list */
+    .styled-ol {
+      list-style-type: none;
+      counter-reset: step-counter;
+      padding-left: 0;
+    }
+    .styled-ol li {
+      counter-increment: step-counter;
+      margin-bottom: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .styled-ol li::before {
+      content: counter(step-counter);
+      background: #f0dbbc;
+      color: #b45a2a;
+      font-weight: bold;
+      width: 28px;
+      height: 28px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    /* registration form - advanced */
+    .reg-section {
+      background: linear-gradient(112deg, #fff4e8, #fffaf2);
+      border-radius: 2rem;
+      margin: 2.5rem 0 1.5rem;
+      padding: 2rem 2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      border: 1px solid #ffefdb;
+    }
+    .reg-section h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #c2773c;
+      margin-bottom: 0.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .input-field {
+      flex: 1;
+      min-width: 200px;
+    }
+    .input-field label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      color: #5b4a38;
+    }
+    .input-field input, .input-field select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 60px;
+      border: 1px solid #eedbcb;
+      background: white;
+      font-family: inherit;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .input-field input:focus, .input-field select:focus {
+      outline: none;
+      border-color: #da9f6b;
+      box-shadow: 0 0 0 3px rgba(218, 159, 107, 0.2);
+    }
+    .btn-submit {
+      background: #c87e3a;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 1.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-submit:hover {
+      background: #9f5c2c;
+      transform: scale(0.98);
+    }
+    .success-toast {
+      background: #2f6b47;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px dashed #e6cfb5;
+      color: #7f6a55;
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+    footer i {
+      margin: 0 4px;
+    }
+
+    /* responsive */
+    @media (max-width: 750px) {
+      .container {
+        padding: 1rem;
+      }
+      .hero-section {
+        flex-direction: column;
+        align-items: start;
+      }
+      .info-grid {
+        flex-direction: column;
+      }
+      .card h2, .card h3 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Advanced Marquee (Ticker) -->
+<div class="announcement-bar">
+  <div class="ticker">
+    <i class="fas fa-star-of-life"></i> WELCOME TO ABUJA HAIR DRESSING TRAINING CENTER — WITH GOD, EVERYTHING IS POSSIBLE 
+    <i class="fas fa-hand-sparkles"></i> ENROLL NOW FOR 2025 SESSION 
+    <i class="fas fa-scissors"></i> LIMITED SLOTS AVAILABLE 
+    <i class="fas fa-star-of-life"></i> WELCOME TO ABUJA HAIR DRESSING TRAINING CENTER — WITH GOD, EVERYTHING IS POSSIBLE 
+    <i class="fas fa-hand-sparkles"></i> ENROLL NOW FOR 2025 SESSION 
+  </div>
+</div>
+
+<main class="container">
+  <!-- Hero & Branding -->
+  <div class="hero-section">
+    <div class="brand">
+      <h1><i class="fas fa-cut"></i> Abuja Hair Dressing</h1>
+      <p>Beauty & Excellence Academy — Where talent meets profession</p>
+    </div>
+    <button class="cta-btn" id="scrollRegBtn"><i class="fas fa-calendar-alt"></i> Register Now</button>
+  </div>
+
+  <!-- Location & contact info block (improved) -->
+  <div class="info-grid">
+    <div class="welcome-message">
+      <p><i class="fas fa-map-marker-alt" style="color:#c87e3a;"></i> We are located in Masaka Road, Central Hub</p>
+      <div class="branch-badge">
+        <span class="branch"><i class="fas fa-location-dot"></i> Bombo</span>
+        <span class="branch"><i class="fas fa-location-dot"></i> Jinja</span>
+        <span class="branch"><i class="fas fa-location-dot"></i> Kampala</span>
+        <span class="branch"><i class="fas fa-location-dot"></i> Masaka</span>
+        <span class="branch"><i class="fas fa-location-dot"></i> Entebbe</span>
+      </div>
+      <div class="reg-highlight">
+        <i class="fas fa-chalkboard-user"></i> Registration is in Progress for New Students — 2025 intake!
+      </div>
+      <p style="margin-top: 1rem; font-style: italic; color:#8b694b;">“In God we trust, and by His grace, we transform dreams into skills.”</p>
+    </div>
+    <div class="contact-card">
+      <h3><i class="fas fa-address-card"></i> Connect with us</h3>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <a href="tel:080080080" class="phone-link"><i class="fas fa-phone-alt"></i> 0800 80080</a>
+      <div style="margin-top: 12px; font-size:0.85rem"><i class="fas fa-envelope"></i> info@abujahair.com</div>
+    </div>
+  </div>
+
+  <!-- Two column: Materials & Achievements with icons and modern layout -->
+  <div class="two-col">
+    <!-- Materials needed -->
+    <div class="card">
+      <h3><i class="fas fa-ribbon"></i> Materials Needed</h3>
+      <ul class="styled-ol" style="list-style: none; margin-top: 0.8rem;">
+        <li><i class="fas fa-puzzle-piece"></i> Braids (Premium & Regular)</li>
+        <li><i class="fas fa-hand-sparkles"></i> Professional Combs</li>
+        <li><i class="fas fa-female"></i> Training Dolls / Mannequins</li>
+        <li><i class="fas fa-thread"></i> High-quality Threads & Elastic bands</li>
+        <li><i class="fas fa-hot-tub"></i> Hair Dryer & Styling Tools (optional kit)</li>
+      </ul>
+      <div style="margin-top: 1rem; background:#fdf3ea; border-radius: 2rem; padding: 0.6rem 1rem; font-size:0.85rem;">
+        <i class="fas fa-tools"></i> Complete kit available at academy shop — 20% student discount
+      </div>
+    </div>
+    <!-- Achievements -->
+    <div class="card">
+      <h3><i class="fas fa-trophy"></i> Achievements After Training</h3>
+      <ul class="achievement-list" style="list-style: none;">
+        <li><i class="fas fa-certificate"></i> Professional Hairdressing Skills</li>
+        <li><i class="fas fa-briefcase"></i> Job Placement Assistance & Internships</li>
+        <li><i class="fas fa-lightbulb"></i> Creative Talents & Business Mindset</li>
+        <li><i class="fas fa-chart-line"></i> Real-world Salon Experience</li>
+        <li><i class="fas fa-user-graduate"></i> Accredited Diploma & Startup Guidance</li>
+      </ul>
+      <div style="margin-top: 1.2rem;">
+        <span class="branch" style="background:#ddb58233;"><i class="fas fa-check-circle"></i> 96% graduate employment rate</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Form (Advanced with Name, Email, Course selection, etc) -->
+  <div class="reg-section" id="registrationPanel">
+    <h3><i class="fas fa-edit"></i> Reserve Your Seat — Quick Registration</h3>
+    <p style="margin-bottom: 1rem;">Fill the form below, our team will reach out within 24hrs.</p>
+    
+    <form id="studentRegForm">
+      <div class="form-group">
+        <div class="input-field">
+          <label><i class="fas fa-user"></i> Full Name *</label>
+          <input type="text" id="fullName" placeholder="e.g., Aisha Namukwaya" required>
+        </div>
+        <div class="input-field">
+          <label><i class="fas fa-phone-alt"></i> Phone Number</label>
+          <input type="tel" id="phoneNum" placeholder="+256 700 123 456">
+        </div>
+        <div class="input-field">
+          <label><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" id="emailAddr" placeholder="student@example.com">
+        </div>
+        <div class="input-field">
+          <label><i class="fas fa-map-pin"></i> Preferred Branch</label>
+          <select id="branchSelect">
+            <option value="Masaka Road HQ">Masaka Road (Main HQ)</option>
+            <option value="Bombo">Bombo Branch</option>
+            <option value="Jinja">Jinja Branch</option>
+            <option value="Kampala">Kampala Branch</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-field">
+          <label><i class="fas fa-clock"></i> Preferred Session</label>
+          <select id="sessionSelect">
+            <option>Morning (8am - 12pm)</option>
+            <option>Afternoon (1pm - 5pm)</option>
+            <option>Weekend (Sat Only)</option>
+            <option>Evening (5pm - 8pm)</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <label><i class="fas fa-comment"></i> Additional note</label>
+          <input type="text" id="notes" placeholder="Any questions?">
+        </div>
+      </div>
+      <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Submit Registration</button>
+      <div id="formFeedback" style="margin-top: 1rem;"></div>
+    </form>
+  </div>
+
+  <!-- extra value: gallery/ inspiration note -->
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin: 2rem 0 0.5rem; align-items: center;">
+    <div style="display: flex; gap: 8px;">
+      <i class="fas fa-star" style="color:#e6b17e;"></i><span style="font-weight:500">God’s Grace Academy — Empowering women & men since 2010</span>
+    </div>
+    <div>
+      <i class="fas fa-shield-alt"></i> Certified by Uganda Hairdressing & Beauty Association
+    </div>
+  </div>
+</main>
+
+<footer>
+  <i class="fas fa-crown"></i> Abuja Hair Dressing Training Center | Masaka Road, Kampala | <i class="fas fa-heart" style="color:#c5622e;"></i> In God We Trust  
+  <br>© 2025 — Excellence, Skill & Creativity
+</footer>
+
+<script>
+  // Smooth scroll to registration form
+  const scrollBtn = document.getElementById('scrollRegBtn');
+  const regPanel = document.getElementById('registrationPanel');
+  if(scrollBtn && regPanel) {
+    scrollBtn.addEventListener('click', () => {
+      regPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // add subtle highlight effect
+      regPanel.style.transition = '0.3s';
+      regPanel.style.boxShadow = '0 0 0 3px #e2a36f, 0 12px 28px rgba(0,0,0,0.1)';
+      setTimeout(() => {
+        regPanel.style.boxShadow = '';
+      }, 1200);
+    });
+  }
+
+  // Registration form handler (advanced feedback)
+  const form = document.getElementById('studentRegForm');
+  const feedbackDiv = document.getElementById('formFeedback');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const fullName = document.getElementById('fullName').value.trim();
+    if(!fullName) {
+      feedbackDiv.innerHTML = '<div class="success-toast" style="background:#bc5a3c;"><i class="fas fa-exclamation-triangle"></i> Please enter your full name.</div>';
+      setTimeout(() => { feedbackDiv.innerHTML = ''; }, 3000);
+      return;
+    }
+    
+    const phone = document.getElementById('phoneNum').value.trim();
+    const email = document.getElementById('emailAddr').value.trim();
+    const branch = document.getElementById('branchSelect').value;
+    const session = document.getElementById('sessionSelect').value;
+    const notes = document.getElementById('notes').value;
+    
+    // simulate registration success message
+    let message = `<div class="success-toast" style="background:#2a6b47; display:inline-flex; gap: 8px; align-items:center;">
+                    <i class="fas fa-check-circle"></i> Thank you ${fullName.split(' ')[0]}! Registration received for ${branch} (${session}).
+                    Our team will contact you soon. God bless!
+                  </div>`;
+    feedbackDiv.innerHTML = message;
+    
+    // Optional: reset only if user wants, but we just clear after 5 secs but keep message
+    setTimeout(() => {
+      if(feedbackDiv.firstChild) {
+        // don't fully clear, but we can make it fade? but keep success visible, after 5 seconds remove
+        setTimeout(() => {
+          if(feedbackDiv.innerHTML === message) feedbackDiv.innerHTML = '';
+        }, 4500);
+      }
+    }, 100);
+    
+    // clear input fields (optional — we keep for better UX? but maybe just not to annoy, we reset only name? but i'll keep data)
+    // Actually we could reset form or not: better to let user see what they filled.
+    // For demonstration, we do NOT reset, they can see their inputs.
+    // Also we can console log for extra
+    console.log(`New registration: ${fullName}, ${phone}, ${email}, branch:${branch}, session:${session}, note:${notes}`);
+    
+    // additional small effect
+    const submitBtn = form.querySelector('.btn-submit');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-
